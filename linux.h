@@ -1,5 +1,5 @@
-#ifndef win32_h
-#define win32_h
+#ifndef linux_h
+#define linux_h
 
 #include "../lcall.h"
 
@@ -7,7 +7,7 @@
 hlibrary lib_load(const char* libname);
 
 // load a function of a loaded library
-hprocedure lib_get(hlibrary h, const char* procname);
+hprocedure lib_get(hlibrary h, const char* proc_name);
 
 //////////////////////////////////////////////////////////////////////////
 
@@ -22,5 +22,11 @@ hprocedure lib_get(hlibrary h, const char* procname);
 // call the function
 #define proc_call(_proc)\
 	__asm{call _proc}
+
+#define stack_save(_mword)\
+	__asm{mov _mword, esp}
+
+#define stack_rewind(_mword)\
+	__asm{mov esp, _mword}
 
 #endif

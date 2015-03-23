@@ -9,6 +9,9 @@ typedef void* hlibrary;
 typedef void* hprocedure;
 typedef void* hreturn;
 
+extern char* c_stdcall;
+extern char* c_cdecl;
+
 LUALIB_API void lcall_open(lua_State* L);
 
 #endif

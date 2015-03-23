@@ -1,1 +1,6 @@
 # gitignore
+
+Debug
+*.vcxproj
+*.filters
+*.user
